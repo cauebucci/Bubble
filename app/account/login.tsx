@@ -8,7 +8,7 @@ export default function AccountLoginScreen() {
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.bg} source={placholderScreenPath}>
-        <Text style={styles.bigText}>UPDATING</Text>
+        <Text style={styles.bigText}>LOGIN</Text>
         <ButtonLink text="HOME" href="/home/" />
       </ImageBackground>
     </View>
