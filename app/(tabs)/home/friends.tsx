@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, ImageBackground } from "react-native";
 
-const placholderScreenPath = require("@/assets/images/placeholder/AMIGOS.png");
+const placholderScreenPath = require("@/assets/images/placeholder/FRIENDS.png");
 
 export default function AccountLoginScreen() {
   return (
