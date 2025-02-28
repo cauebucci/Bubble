@@ -1,9 +1,13 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ImageBackground } from "react-native";
 
-export default function FriendsScreen() {
+const placholderScreenPath = require("@/assets/images/placeholder/AMIGOS.png");
+
+export default function AccountLoginScreen() {
   return (
-    <View>
-      <Text style={styles.bigText}>FRIENDS</Text>
+    <View style={styles.container}>
+      <ImageBackground style={styles.bg} source={placholderScreenPath}>
+        <Text style={styles.bigText}>FRIENDS</Text>
+      </ImageBackground>
     </View>
   );
 }
@@ -11,5 +15,13 @@ export default function FriendsScreen() {
 const styles = StyleSheet.create({
   bigText: {
     fontSize: 20,
+    color: "#fff",
+  },
+  bg: {
+    flex: 1,
+  },
+  container: {
+    flex: 1,
+    padding: 20,
   },
 });
