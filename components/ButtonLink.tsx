@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     paddingHorizontal: 3,
     borderWidth: 5,
-    borderColor: "black",
+    borderColor: "#fff",
+    color: "#fff",
   },
 });

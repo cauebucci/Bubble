@@ -1,13 +1,17 @@
-import { Link } from "expo-router";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ImageBackground } from "react-native";
 
 import ButtonLink from "@/components/ButtonLink";
 
+const splashScreenPath = require("@/assets/images/placeholder/SPLASH-SCREEN.png");
+
 export default function Index() {
   return (
-    <View>
-      <Text style={styles.bigText}>SPLASH SCREEN</Text>
-      <ButtonLink text="CREATE ACCOUNT" href="/account/create" />
+    <View style={styles.container}>
+      <ImageBackground style={styles.bg} source={splashScreenPath}>
+        <Text style={styles.bigText}>SPLASH SCREEN</Text>
+        <Text style={styles.bigText}>DIFF TEXT</Text>
+        <ButtonLink text="CREATE ACCOUNT" href="/account/create" />
+      </ImageBackground>
     </View>
   );
 }
@@ -15,10 +19,13 @@ export default function Index() {
 const styles = StyleSheet.create({
   bigText: {
     fontSize: 20,
-  },
-  button: {
-    fontSize: 20,
-    textDecorationLine: "underline",
     color: "#fff",
+  },
+  bg: {
+    flex: 1,
+  },
+  container: {
+    flex: 1,
+    padding: 20,
   },
 });
