@@ -1,4 +1,7 @@
-import { Text, StyleSheet, TextInput, View } from "react-native";
+import { useContext } from "react";
+import { AppContext } from "@/context/AppContext";
+import { StyleSheet, TextInput, View } from "react-native";
+import TextElement from "./TextElement";
 // import { Link } from "expo-router";
 
 type Props = {
@@ -8,12 +11,24 @@ type Props = {
 };
 
 export default function Input({ label, alterLink, placeholder }: Props) {
+  const appContext = useContext(AppContext);
+  const fontFamily = appContext?.fontFamily;
+
   return (
     <View style={styles.textInputContainer}>
-      <Text style={styles.textInputLabel}>{label}:</Text>
-      <TextInput style={styles.textInput} placeholder={placeholder} />
+      <TextElement style={{ fontFamily, ...styles.textInputLabel }}>
+        {label}:
+      </TextElement>
+      <TextInput
+        style={{ fontFamily, ...styles.textInput }}
+        placeholder={placeholder}
+        placeholderTextColor={styles.textInput.color}
+        textAlign="center"
+      />
       {alterLink ? (
-        <Text style={styles.textInputAlterLink}>{alterLink}</Text>
+        <TextElement style={{ fontFamily, ...styles.textInputAlterLink }}>
+          {alterLink}
+        </TextElement>
       ) : (
         <></>
       )}
@@ -23,30 +38,31 @@ export default function Input({ label, alterLink, placeholder }: Props) {
 
 const styles = StyleSheet.create({
   textInputContainer: {
-    width: "80%",
-    borderColor: "white",
-    borderWidth: 1,
+    width: "90%",
+    // borderColor: "white",
+    // borderWidth: 1,
   },
   textInputLabel: {
     color: "#dfdfdf",
-    borderColor: "red",
-    borderWidth: 1,
+    fontSize: 18,
+    // borderColor: "red",
+    // borderWidth: 1,
+  },
+  textInput: {
+    backgroundColor: "#5A189A",
+    color: "#dfdfdf",
+    fontSize: 18,
+    borderRadius: 5,
+    height: 40,
+    marginVertical: 10,
+    width: "100%",
+    // borderColor: "cyan",
+    // borderWidth: 1,
   },
   textInputAlterLink: {
     color: "#dfdfdf",
-    borderColor: "orange",
-    borderWidth: 1,
     alignSelf: "center",
-  },
-  textInput: {
-    backgroundColor: "#5a189a",
-    color: "#dfdfdf",
-    fontSize: 15,
-    borderRadius: 5,
-    height: 20,
-    marginVertical: 10,
-    width: "100%",
-    borderColor: "cyan",
-    borderWidth: 1,
+    // borderColor: "orange",
+    // borderWidth: 1,
   },
 });

@@ -1,14 +1,15 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 import Input from "@/components/Input";
 import BubbleIcon from "@/components/BubbleIcon";
 import Footer from "@/components/Footer";
 import ButtonSumbit from "@/components/ButtonSubmit";
+import TextElement from "@/components/TextElement";
 
 export default function AccountLoginScreen() {
   return (
     <View style={styles.viewContainer}>
-      <Text style={styles.text}>Português (Brasil)</Text>
+      <TextElement style={styles.text}>Português (Brasil)</TextElement>
       <BubbleIcon width={300} height={300} />
       <Input label="Nome de usuário" placeholder="@exemplo" />
       <Input
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     fontSize: 20,
+    fontFamily: "Inter_400Regular",
   },
   viewContainer: {
     paddingTop: 20,
@@ -33,9 +35,9 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "flex-end",
-    gap: "8%",
+    gap: "5%",
     backgroundColor: "#200243",
-    borderColor: "coral",
-    borderWidth: 1,
+    // borderColor: "coral",
+    // borderWidth: 1,
   },
 });

@@ -1,5 +1,6 @@
-import { Text, StyleSheet, Animated } from "react-native";
+import { StyleSheet } from "react-native";
 import { Link } from "expo-router";
+import TextElement from "./TextElement";
 
 type Props = {
   href: string;
@@ -10,7 +11,7 @@ export default function ButtonLink({ href, text }: Props) {
   return (
     <>
       <Link href={href} style={styles.button}>
-        <Text>{text}</Text>
+        <TextElement>{text}</TextElement>
       </Link>
     </>
   );

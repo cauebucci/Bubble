@@ -18,7 +18,7 @@ export default function BubbleIcon({ height, width }: Props) {
 
 const styles = StyleSheet.create({
   bubbleIcon: {
-    borderColor: "pink",
-    borderWidth: 1,
+    // borderColor: "pink",
+    // borderWidth: 1,
   },
 });

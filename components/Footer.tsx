@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import TextElement from "./TextElement";
 
 type Props = {
   title: string;
@@ -7,7 +8,7 @@ type Props = {
 export default function Footer({ title }: Props) {
   return (
     <View style={styles.footer}>
-      <Text style={styles.footerText}>{title}</Text>
+      <TextElement style={styles.footerText}>{title}</TextElement>
     </View>
   );
 }
