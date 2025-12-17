@@ -1,27 +1,35 @@
-import { Text, View, StyleSheet, ImageBackground } from "react-native";
-
-const placholderScreenPath = require("@/assets/images/placeholder/NOTIFICATIONS.png");
+import { Text, View, StyleSheet } from "react-native";
 
 export default function AccountLoginScreen() {
   return (
     <View style={styles.container}>
-      <ImageBackground style={styles.bg} source={placholderScreenPath}>
+      <View style={styles.content}>
         <Text style={styles.bigText}>NOTIFICATIONS</Text>
-      </ImageBackground>
+        <Text style={styles.developmentText}>🚧 Em desenvolvimento</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#1a1a1a",
+    padding: 20,
+  },
+  content: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   bigText: {
     fontSize: 20,
     color: "#fff",
   },
-  bg: {
-    flex: 1,
-  },
-  container: {
-    flex: 1,
-    padding: 20,
+  developmentText: {
+    fontSize: 16,
+    color: "#999",
+    marginTop: 16,
+    fontWeight: "500",
   },
 });
