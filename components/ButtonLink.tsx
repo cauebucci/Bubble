@@ -1,8 +1,8 @@
 import { Text, StyleSheet, Animated } from "react-native";
-import { Link } from "expo-router";
+import { Link, Href } from "expo-router";
 
 type Props = {
-  href: string;
+  href: Href;
   text: string;
 };
 

@@ -9,14 +9,27 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Este app precisa da sua localização para mostrar seus amigos no mapa.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Este app precisa da sua localização para mostrar seus amigos no mapa.",
+        "NSPhotoLibraryUsageDescription": "Este app precisa acessar suas fotos para você poder escolher uma foto de perfil.",
+        "NSCameraUsageDescription": "Este app precisa acessar sua câmera para você poder tirar uma foto de perfil."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.bubble"
+      "package": "com.anonymous.bubble",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -31,7 +44,20 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#25003d"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Este app precisa da sua localização para mostrar seus amigos no mapa."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Este app precisa acessar suas fotos para você poder escolher uma foto de perfil.",
+          "cameraPermission": "Este app precisa acessar sua câmera para você poder tirar uma foto de perfil."
         }
       ],
       "expo-asset"
